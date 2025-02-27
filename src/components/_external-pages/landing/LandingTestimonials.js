@@ -215,13 +215,13 @@ export default function LandingTestimonials() {
                         ...varFadeInUp,
                         animate: {
                           ...varFadeInUp.animate, transition: {
-                            duration: index + 0.4,
+                            duration: 0.6,
                             ease: [0.43, 0.13, 0.93, 0.96]
                           }
                         },
                         exit: {
                           ...varFadeInUp.exit, transition: {
-                            duration: index + 0.4,
+                            duration: 0.6,
                             ease: [0.43, 0.13, 0.23, 0.96]
                           }
                         }
@@ -239,13 +239,13 @@ export default function LandingTestimonials() {
                         ...varFadeInUp,
                         animate: {
                           ...varFadeInUp.animate, transition: {
-                            duration: index + 1.94,
+                            duration: 0.94,
                             ease: [0.43, 0.13, 0.93, 0.96]
                           }
                         },
                         exit: {
                           ...varFadeInUp.exit, transition: {
-                            duration: index + 1.94,
+                            duration: 0.94,
                             ease: [0.43, 0.13, 0.23, 0.96]
                           }
                         }

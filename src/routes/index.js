@@ -61,7 +61,7 @@ export default function Router() {
         </GuestGuard>
       ),
       children: [
-        { path: '/', element: <LandingPage></LandingPage> },
+        { path: '/portfolio_two', element: <LandingPage></LandingPage> },
       ]
     },
 

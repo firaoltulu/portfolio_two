@@ -12,6 +12,7 @@ import "../components/_external-pages/landing/styles.css";
 import { MotionInView, varFadeInUp, varFadeInLeft } from 'src/components/animate';
 // Utils
 import LightboxModal from 'src/components/LightboxModal';
+import { PATH_PAGE } from 'src/routes/paths';
 // 
 import materialuiicon from "../assets/project/materialuiicon.png";
 import reacticon from "../assets/project/reacticon.png";
@@ -20,7 +21,30 @@ import pythonicon from "../assets/project/pythonicon.png";
 import mongodbicon from "../assets/project/mongodbicon.png";
 import mysqlicon from "../assets/project/mysqlicon.png";
 import binanceicon from "../assets/project/binanceicon.png";
-import { PATH_PAGE } from 'src/routes/paths';
+
+import project_orderflow_one from "../assets/project/project_one/orderbook/project_four.png";
+import project_orderflow_two from "../assets/project/project_one/orderbook/project_one.png";
+import project_orderflow_three from "../assets/project/project_one/orderbook/project_seven.png";
+import project_orderflow_four from "../assets/project/project_one/orderbook/project_six.png";
+
+
+import project_chart_one from "../assets/project/project_one/chart/project_one.png";
+import project_chart_two from "../assets/project/project_one/chart/project_two.png";
+import project_chart_three from "../assets/project/project_one/chart/project_three.png";
+import project_chart_four from "../assets/project/project_one/chart/project_four.png";
+import project_chart_five from "../assets/project/project_one/chart/project_five.png";
+
+
+import project_calendar_one from "../assets/project/project_one/calendar/project_one.png";
+import project_calendar_two from "../assets/project/project_one/calendar/project_two.png";
+import project_calendar_three from "../assets/project/project_one/calendar/project_one.png";
+import project_calendar_four from "../assets/project/project_one/calendar/project_one.png";
+import project_calendar_five from "../assets/project/project_one/calendar/project_one.png";
+
+import project_user_one from "../assets/project/project_one/user/project_one.png";
+import project_user_two from "../assets/project/project_one/user/project_two.png";
+import project_user_three from "../assets/project/project_one/user/project_three.png";
+import project_user_four from "../assets/project/project_one/user/project_four.png";
 
 // ----------------------------------------------------------------------
 
@@ -40,26 +64,26 @@ const imagesLightbox = [
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/orderbook/project_six.png'
+        "Url": project_orderflow_one
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/orderbook/project_one.png'
+        "Url": project_orderflow_two
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/orderbook/project_four.png'
+        "Url": project_orderflow_three
     },
 
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/orderbook/project_seven.png'
+        "Url": project_orderflow_four
     },
 ];
 
@@ -68,31 +92,31 @@ const imagesLightbox_two = [
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/chart/project_one.png'
+        "Url": project_chart_one
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/chart/project_two.png'
+        "Url": project_chart_two
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/chart/project_three.png'
+        "Url": project_chart_three
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/chart/project_four.png'
+        "Url": project_chart_four
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/chart/project_five.png'
+        "Url": project_chart_five
     },
 ];
 
@@ -101,31 +125,31 @@ const imagesLightbox_three = [
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/calendar/project_one.png'
+        "Url": project_calendar_one
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/calendar/project_two.png'
+        "Url": project_calendar_two
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/calendar/project_three.png'
+        "Url": project_calendar_three
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/calendar/project_four.png'
+        "Url": project_calendar_four
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/calendar/project_five.png'
+        "Url": project_calendar_five
     },
 ];
 
@@ -134,25 +158,25 @@ const imagesLightbox_four = [
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/user/project_one.png'
+        "Url": project_user_one
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/user/project_two.png'
+        "Url": project_user_two
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/user/project_three.png'
+        "Url": project_user_three
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/user/project_four.png'
+        "Url": project_user_four
     },
 ];
 

@@ -1,9 +1,12 @@
 {
   "name": "my-portfolio-project",
   "version": "1.0.0",
+  "homepage": "https://firaoltulu.github.io/portfolio_two",
   "author": "firaol tulu",
   "private": true,
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -79,6 +82,7 @@
     "babel-loader": "^9.2.1",
     "eslint": "^8.57.1",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "gh-pages": "^6.3.0",
     "prettier": "^3.3.3",
     "webpack-cli": "^5.1.4"
   },

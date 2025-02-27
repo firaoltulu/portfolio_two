@@ -12,6 +12,9 @@ import { MHidden } from 'src/components/@material-extend';
 import { TextAnimate } from '../../animate';
 // hooks
 import useNav from '../../../hooks/useNav';
+// 
+import hero_one from "../../../assets/hero/hero_one.png";
+import hero_two from "../../../assets/hero/hero_two.png";
 
 // ----------------------------------------------------------------------
 
@@ -59,7 +62,7 @@ export default function LandingHero({ bodyRef }) {
 
     // Set container dimensions
     const width = container.offsetWidth || window.innerWidth;
-    const height = container.offsetHeight || window.innerHeight;
+    const height = container.offsetWidth || window.innerWidth;
 
     // Scene, Camera, Renderer
     const scene = new THREE.Scene();
@@ -80,11 +83,11 @@ export default function LandingHero({ bodyRef }) {
     // Load Textures
     const loader = new THREE.TextureLoader();
     const texture1 = loader.load(
-      '/static/home/hero_one.png',
+      hero_one,
       () => { }
     );
     const texture2 = loader.load(
-      '/static/home/hero_two.png',
+      hero_two,
       () => { }
     );
     const displacementTexture = loader.load(
@@ -463,8 +466,6 @@ export default function LandingHero({ bodyRef }) {
                   theme.palette.mode === 'light'
                     ? `linear-gradient(45deg, rgba(96, 108, 179, 0.2), rgba(37, 57, 112, 0.4))`
                     : `linear-gradient(45deg, rgba(96, 108, 179, 0.2), rgba(37, 57, 112, 0.1))`,
-
-                backdropFilter: 'blur(15px)',
               }}
             ></Box>
             <motion.img
@@ -668,160 +669,105 @@ export default function LandingHero({ bodyRef }) {
         borderColor: theme.palette.mode === 'light' ? '#371f0e33' : '#fcf2ec66'
       }}>
 
-        <motion.Box className="infinity_content" animate={animation} style={{
+        <motion.div className="infinity_content" animate={animation} style={{
           position: "absolute",
           width: "100%",
           height: "100%",
           transformStyle: "preserve-3d",
+          color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec'
+
         }}>
 
-          <Box className="infinity_inside" sx={{
-            color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec'
-          }}>
+          <Box className="infinity_inside">
             <h5>Python</h5>
             <h5>•</h5>
-            <h5>React</h5>
-            <h5>•</h5>
-            <h5>Node</h5>
+            <h5>JavaScript</h5>
             <h5>•</h5>
             <h5>C#</h5>
             <h5>•</h5>
-            <h5>C++</h5>
+            <h5>PHP</h5>
             <h5>•</h5>
-            <h5>Javascript</h5>
+            <h5>Java</h5>
             <h5>•</h5>
           </Box>
-          <Box className="infinity_inside" sx={{
-            color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec'
-          }}>
-            <h5>Python</h5>
-            <h5>•</h5>
+          <Box className="infinity_inside">
             <h5>React</h5>
             <h5>•</h5>
-            <h5>Node</h5>
+            <h5>Nodejs</h5>
             <h5>•</h5>
-            <h5>C#</h5>
+            <h5>Asp.net</h5>
             <h5>•</h5>
-            <h5>C++</h5>
-            <h5>•</h5>
-            <h5>Javascript</h5>
+            <h5>Django</h5>
             <h5>•</h5>
           </Box>
-          <Box className="infinity_inside" sx={{
-            color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec'
-          }}>
+          <Box className="infinity_inside">
             <h5>Python</h5>
             <h5>•</h5>
-            <h5>React</h5>
-            <h5>•</h5>
-            <h5>Node</h5>
+            <h5>JavaScript</h5>
             <h5>•</h5>
             <h5>C#</h5>
             <h5>•</h5>
-            <h5>C++</h5>
+            <h5>PHP</h5>
             <h5>•</h5>
-            <h5>Javascript</h5>
+            <h5>Java</h5>
             <h5>•</h5>
           </Box>
-          <Box className="infinity_inside" sx={{
-            color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec'
-          }}>
-            <h5>Python</h5>
-            <h5>•</h5>
+          <Box className="infinity_inside">
             <h5>React</h5>
             <h5>•</h5>
-            <h5>Node</h5>
+            <h5>Nodejs</h5>
             <h5>•</h5>
-            <h5>C#</h5>
+            <h5>Asp.net</h5>
             <h5>•</h5>
-            <h5>C++</h5>
-            <h5>•</h5>
-            <h5>Javascript</h5>
+            <h5>Django</h5>
             <h5>•</h5>
           </Box>
-          <Box className="infinity_inside" sx={{
-            color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec'
-          }}>
+          <Box className="infinity_inside">
             <h5>Python</h5>
             <h5>•</h5>
-            <h5>React</h5>
-            <h5>•</h5>
-            <h5>Node</h5>
+            <h5>JavaScript</h5>
             <h5>•</h5>
             <h5>C#</h5>
             <h5>•</h5>
-            <h5>C++</h5>
+            <h5>PHP</h5>
             <h5>•</h5>
-            <h5>Javascript</h5>
+            <h5>Java</h5>
             <h5>•</h5>
           </Box>
-          <Box className="infinity_inside" sx={{
-            color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec'
-          }}>
-            <h5>Python</h5>
-            <h5>•</h5>
+          <Box className="infinity_inside">
             <h5>React</h5>
             <h5>•</h5>
-            <h5>Node</h5>
+            <h5>Nodejs</h5>
             <h5>•</h5>
-            <h5>C#</h5>
+            <h5>Asp.net</h5>
             <h5>•</h5>
-            <h5>C++</h5>
-            <h5>•</h5>
-            <h5>Javascript</h5>
+            <h5>Django</h5>
             <h5>•</h5>
           </Box>
-          <Box className="infinity_inside" sx={{
-            color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec'
-          }}>
+          <Box className="infinity_inside">
             <h5>Python</h5>
             <h5>•</h5>
-            <h5>React</h5>
-            <h5>•</h5>
-            <h5>Node</h5>
+            <h5>JavaScript</h5>
             <h5>•</h5>
             <h5>C#</h5>
             <h5>•</h5>
-            <h5>C++</h5>
+            <h5>PHP</h5>
             <h5>•</h5>
-            <h5>Javascript</h5>
+            <h5>Java</h5>
             <h5>•</h5>
           </Box>
-          <Box className="infinity_inside" sx={{
-            color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec'
-          }}>
-            <h5>Python</h5>
-            <h5>•</h5>
+          <Box className="infinity_inside">
             <h5>React</h5>
             <h5>•</h5>
-            <h5>Node</h5>
+            <h5>Nodejs</h5>
             <h5>•</h5>
-            <h5>C#</h5>
+            <h5>Asp.net</h5>
             <h5>•</h5>
-            <h5>C++</h5>
-            <h5>•</h5>
-            <h5>Javascript</h5>
-            <h5>•</h5>
-          </Box>
-          <Box className="infinity_inside" sx={{
-            color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec'
-          }}>
-            <h5>Python</h5>
-            <h5>•</h5>
-            <h5>React</h5>
-            <h5>•</h5>
-            <h5>Node</h5>
-            <h5>•</h5>
-            <h5>C#</h5>
-            <h5>•</h5>
-            <h5>C++</h5>
-            <h5>•</h5>
-            <h5>Javascript</h5>
+            <h5>Django</h5>
             <h5>•</h5>
           </Box>
 
-
-        </motion.Box>
+        </motion.div>
 
       </Box>
 

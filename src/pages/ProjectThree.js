@@ -22,6 +22,15 @@ import jqueryicon from "../assets/project/jqueryicon.png";
 import phpicon from "../assets/project/phpicon.png";
 import { PATH_PAGE } from 'src/routes/paths';
 
+import project_one from "../assets/project/project_three/elearning/project_one.png";
+import project_two from "../assets/project/project_three/elearning/project_two.png";
+import project_three from "../assets/project/project_three/elearning/project_three.png";
+import project_five from "../assets/project/project_three/elearning/project_five.png";
+
+import project_six from "../assets/project/project_three/elearning/project_six.png";
+import project_eight from "../assets/project/project_three/elearning/project_eight.png";
+import project_nine from "../assets/project/project_three/elearning/project_nine.png";
+import project_ten from "../assets/project/project_three/elearning/project_ten.png";
 
 // ----------------------------------------------------------------------
 
@@ -41,56 +50,50 @@ const imagesLightbox_two = [
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/elearning/project_one.png'
+        "Url": project_one
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/elearning/project_two.png'
+        "Url": project_two
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/elearning/project_three.png'
+        "Url": project_three
     },
 
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/elearning/project_five.png'
+        "Url": project_five
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/elearning/project_six.png'
+        "Url": project_six
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/elearning/project_seven.png'
+        "Url": project_eight
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/elearning/project_eight.png'
+        "Url": project_nine
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/elearning/project_nine.png'
-    },
-    {
-        "AddedDate": "2024-09-05T07:25:46.662Z",
-        "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
-        "ModifiedDate": [],
-        "Url": '/static/project/elearning/project_ten.png'
+        "Url": project_ten
     },
 ];
 

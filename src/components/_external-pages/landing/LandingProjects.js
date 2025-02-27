@@ -13,6 +13,23 @@ import { MotionInView, varFadeInUp, varFadeInDown, TextAnimate } from '../../ani
 import { PATH_PAGE } from 'src/routes/paths';
 // Hooks
 import useNav from '../../../hooks/useNav';
+// 
+import grid from "../../../assets/project/grid.png";
+import screen_dark_1 from "../../../assets/project/project_one/screen_dark_1.png";
+import screen_dark_2 from "../../../assets/project/project_one/screen_dark_2.png";
+import screen_dark_3 from "../../../assets/project/project_one/screen_dark_3.png";
+import screen_light_1 from "../../../assets/project/project_one/screen_light_1.png";
+import screen_light_2 from "../../../assets/project/project_one/screen_light_2.png";
+import screen_light_3 from "../../../assets/project/project_one/screen_light_3.png";
+
+import screen_blue from "../../../assets/project/project_two/screen-blue.png";
+import block1_blue from "../../../assets/project/project_two/block1-blue.png";
+import block2_blue from "../../../assets/project/project_two/block2-blue.png";
+import sidebar_blue from "../../../assets/project/project_two/sidebar-blue.png";
+
+import project_three_one from "../../../assets/project/project_three/project_1.png";
+import project_three_two from "../../../assets/project/project_three/project_2.png";
+import project_three_three from "../../../assets/project/project_three/project_3.png";
 
 // ----------------------------------------------------------------------
 
@@ -216,47 +233,80 @@ export default function LandingProjects() {
 
                                 <Box className="project_image_custom">
 
-                                    <Box component="img" src="/static/home/theme-color/grid.png" />
+                                    <Box component="img" src={grid} />
 
                                     <Box className="project_image_custom_stair">
-                                        {[...Array(3)].map((_, index) => (
-                                            <ScreenStyle
-                                                key={index}
-                                                threshold={0.72}
-                                                variants={{
-                                                    ...(index === 0 && (isRTL ? variantScreenLeft_second : screenLeftAnimate)),
-                                                    ...(index === 1 && (isRTL ? variantScreenCenter_second : screenCenterAnimate)),
-                                                    ...(index === 2 && (isRTL ? variantScreenRight_second : screenRightAnimate))
-                                                }}
-                                                transition={{ duration: 0.72, ease: 'easeOut' }}
-                                                sx={{
-                                                    boxShadow: `${isRTL ? -80 : 80}px -40px 80px ${alpha(
-                                                        isLight ? theme.palette.grey[600] : theme.palette.common.black,
-                                                        0.48
-                                                    )}`,
-                                                    ...(index === 0 && {
-                                                        zIndex: 3,
-                                                        position: 'absolute',
-                                                    }),
-                                                    ...(index === 1 && { zIndex: 2, position: 'absolute', }),
-                                                    ...(index === 2 && {
-                                                        zIndex: 1,
-                                                        position: 'absolute',
-                                                        boxShadow: 'none'
-                                                    })
-                                                }}
-                                            >
+                                        {[...Array(3)].map((_, index) => {
+                                            var source = '';
+                                            if (isLight) {
+                                                if (index === 0) {
+                                                    source = screen_light_1;
 
-                                                <motion.div animate={{ y: index === 0 ? [0, -20, 0] : index === 1 ? [-10, 10, -10] : [-25, 5, -25] }} transition={{ duration: 8, repeat: Infinity }}>
-                                                    <img
-                                                        alt={`screen ${index + 1}`}
-                                                        src={`/static/home/project/screen_${isLight ? 'light' : 'dark'}_${index + 1}.png`}
-                                                    />
-                                                </motion.div>
 
-                                            </ScreenStyle>
+                                                }
+                                                else if (index === 1) {
 
-                                        ))}
+                                                    source = screen_light_2;
+
+                                                }
+                                                else if (index === 2) {
+                                                    source = screen_light_3;
+
+                                                }
+
+                                            }
+                                            else {
+
+                                                if (index === 0) {
+
+                                                    source = screen_dark_1;
+                                                }
+                                                else if (index === 1) {
+
+                                                    source = screen_dark_2;
+                                                }
+                                                else if (index === 2) {
+                                                    source = screen_dark_3;
+                                                }
+                                            }
+                                            return (
+                                                <ScreenStyle
+                                                    key={index}
+                                                    threshold={0.72}
+                                                    variants={{
+                                                        ...(index === 0 && (isRTL ? variantScreenLeft_second : screenLeftAnimate)),
+                                                        ...(index === 1 && (isRTL ? variantScreenCenter_second : screenCenterAnimate)),
+                                                        ...(index === 2 && (isRTL ? variantScreenRight_second : screenRightAnimate))
+                                                    }}
+                                                    transition={{ duration: 0.72, ease: 'easeOut' }}
+                                                    sx={{
+                                                        boxShadow: `${isRTL ? -80 : 80}px -40px 80px ${alpha(
+                                                            isLight ? theme.palette.grey[600] : theme.palette.common.black,
+                                                            0.48
+                                                        )}`,
+                                                        ...(index === 0 && {
+                                                            zIndex: 3,
+                                                            position: 'absolute',
+                                                        }),
+                                                        ...(index === 1 && { zIndex: 2, position: 'absolute', }),
+                                                        ...(index === 2 && {
+                                                            zIndex: 1,
+                                                            position: 'absolute',
+                                                            boxShadow: 'none'
+                                                        })
+                                                    }}
+                                                >
+
+                                                    <motion.div animate={{ y: index === 0 ? [0, -20, 0] : index === 1 ? [-10, 10, -10] : [-25, 5, -25] }} transition={{ duration: 8, repeat: Infinity }}>
+                                                        <img
+                                                            alt={`screen ${index + 1}`}
+                                                            src={source}
+                                                        />
+                                                    </motion.div>
+
+                                                </ScreenStyle>
+                                            )
+                                        })}
                                     </Box>
 
 
@@ -331,19 +381,19 @@ export default function LandingProjects() {
                             }}>
 
                                 <Box className="project_image_custom">
-                                    <Box component="img" src="/static/home/theme-color/grid.png" />
+                                    <Box component="img" src={grid} />
 
 
                                     <Box sx={{ position: 'absolute', top: 0 }}>
                                         <MotionInView variants={varFadeInUp}>
-                                            <img alt="screen" src={`/static/home/theme-color/screen-blue.png`} />
+                                            <img alt="screen" src={screen_blue} />
                                         </MotionInView>
                                     </Box>
 
                                     <Box sx={{ position: 'absolute', top: 0 }}>
                                         <MotionInView variants={varFadeInDown}>
                                             <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 8, repeat: Infinity }}>
-                                                <img alt="sidebar" src={`/static/home/theme-color/block1-blue.png`} />
+                                                <img alt="sidebar" src={block1_blue} />
                                             </motion.div>
                                         </MotionInView>
                                     </Box>
@@ -351,7 +401,7 @@ export default function LandingProjects() {
                                     <Box sx={{ position: 'absolute', top: 0 }}>
                                         <MotionInView variants={varFadeInDown}>
                                             <motion.div animate={{ y: [-10, 10, -10] }} transition={{ duration: 8, repeat: Infinity }}>
-                                                <img alt="sidebar" src={`/static/home/theme-color/block2-blue.png`} />
+                                                <img alt="sidebar" src={block2_blue} />
                                             </motion.div>
                                         </MotionInView>
                                     </Box>
@@ -359,7 +409,7 @@ export default function LandingProjects() {
                                     <Box sx={{ position: 'absolute', top: 0 }}>
                                         <MotionInView variants={varFadeInDown}>
                                             <motion.div animate={{ y: [-25, 5, -25] }} transition={{ duration: 10, repeat: Infinity }}>
-                                                <img alt="sidebar" src={`/static/home/theme-color/sidebar-blue.png`} />
+                                                <img alt="sidebar" src={sidebar_blue} />
                                             </motion.div>
                                         </MotionInView>
                                     </Box>
@@ -418,47 +468,64 @@ export default function LandingProjects() {
                             }}>
 
                                 <Box className="project_image_custom">
-                                    <Box component="img" src="/static/home/theme-color/grid.png" />
+                                    <Box component="img" src={grid} />
 
                                     <Box className="project_image_custom_stair">
-                                        {[...Array(3)].map((_, index) => (
-                                            <ScreenStyle
-                                                key={index}
-                                                threshold={0.72}
-                                                variants={{
-                                                    ...(index === 0 && (isRTL ? variantScreenLeft_second : screenLeftAnimate)),
-                                                    ...(index === 1 && (isRTL ? variantScreenCenter_second : screenCenterAnimate)),
-                                                    ...(index === 2 && (isRTL ? variantScreenRight_second : screenRightAnimate))
-                                                }}
-                                                transition={{ duration: 0.72, ease: 'easeOut' }}
-                                                sx={{
-                                                    boxShadow: `${isRTL ? -80 : 80}px -40px 80px ${alpha(
-                                                        isLight ? theme.palette.grey[600] : theme.palette.common.black,
-                                                        0.48
-                                                    )}`,
-                                                    ...(index === 0 && {
-                                                        zIndex: 3,
-                                                        position: 'absolute',
-                                                    }),
-                                                    ...(index === 1 && { zIndex: 2, position: 'absolute', }),
-                                                    ...(index === 2 && {
-                                                        zIndex: 1,
-                                                        position: 'absolute',
-                                                        boxShadow: 'none'
-                                                    })
-                                                }}
-                                            >
+                                        {[...Array(3)].map((_, index) => {
+                                            var source = '';
 
-                                                <motion.div animate={{ y: index === 0 ? [0, -20, 0] : index === 1 ? [-10, 10, -10] : [-25, 5, -25] }} transition={{ duration: 8, repeat: Infinity }}>
-                                                    <img
-                                                        alt={`screen ${index + 1}`}
-                                                        src={`/static/project/elearning/project_${index + 1}.png`}
-                                                    />
-                                                </motion.div>
+                                            if (index === 0) {
+                                                source = project_three_one;
+                                            }
+                                            else if (index === 1) {
 
-                                            </ScreenStyle>
+                                                source = project_three_two;
 
-                                        ))}
+                                            }
+                                            else if (index === 2) {
+                                                source = project_three_three;
+
+                                            }
+
+                                            return (
+                                                <ScreenStyle
+                                                    key={index}
+                                                    threshold={0.72}
+                                                    variants={{
+                                                        ...(index === 0 && (isRTL ? variantScreenLeft_second : screenLeftAnimate)),
+                                                        ...(index === 1 && (isRTL ? variantScreenCenter_second : screenCenterAnimate)),
+                                                        ...(index === 2 && (isRTL ? variantScreenRight_second : screenRightAnimate))
+                                                    }}
+                                                    transition={{ duration: 0.72, ease: 'easeOut' }}
+                                                    sx={{
+                                                        boxShadow: `${isRTL ? -80 : 80}px -40px 80px ${alpha(
+                                                            isLight ? theme.palette.grey[600] : theme.palette.common.black,
+                                                            0.48
+                                                        )}`,
+                                                        ...(index === 0 && {
+                                                            zIndex: 3,
+                                                            position: 'absolute',
+                                                        }),
+                                                        ...(index === 1 && { zIndex: 2, position: 'absolute', }),
+                                                        ...(index === 2 && {
+                                                            zIndex: 1,
+                                                            position: 'absolute',
+                                                            boxShadow: 'none'
+                                                        })
+                                                    }}
+                                                >
+
+                                                    <motion.div animate={{ y: index === 0 ? [0, -20, 0] : index === 1 ? [-10, 10, -10] : [-25, 5, -25] }} transition={{ duration: 8, repeat: Infinity }}>
+                                                        <img
+                                                            alt={`screen ${index + 1}`}
+                                                            src={source}
+                                                        />
+                                                    </motion.div>
+
+                                                </ScreenStyle>
+
+                                            )
+                                        })}
                                     </Box>
 
                                 </Box>
@@ -500,10 +567,13 @@ export default function LandingProjects() {
 
             </Box>
 
-            < Box className="loop_scroll" sx={{
+            <Box className="loop_scroll" sx={{
                 borderTop: '1px solid #371f0e33',
                 borderBottom: '1px solid #371f0e33',
-                borderColor: theme.palette.mode === 'light' ? '#371f0e33' : '#fcf2ec66'
+                borderColor: theme.palette.mode === 'light' ? '#371f0e33' : '#fcf2ec66',
+                [theme.breakpoints.up('md')]: {
+                    height: '5em'
+                },
             }
             }>
 
@@ -512,12 +582,11 @@ export default function LandingProjects() {
                     width: "100%",
                     height: "100%",
                     transformStyle: "preserve-3d",
+
                 }}>
 
                     <Box className="infinity_inside" sx={{
                         color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec',
-                        paddingTop: '1em',
-                        paddingBottom: '1em'
                     }}>
 
                         <Typography variant='h5' sx={{
@@ -905,12 +974,789 @@ export default function LandingProjects() {
                         </Typography>
                         <h5>•</h5>
 
+                    </Box>
 
+                    <Box className="infinity_inside" sx={{
+                        color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec',
+                    }}>
 
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
 
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
 
                     </Box>
 
+                    <Box className="infinity_inside" sx={{
+                        color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec',
+                    }}>
+
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            20&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > projects completed</Typography>
+                        </Typography>
+                        <h5>•</h5>
+                        <Typography variant='h5' sx={{
+                            fontFamily: 'sans-serif',
+                            alignContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            padding: "1em"
+
+                        }}
+                        >
+                            5&#43;
+                            <Typography variant='h5' sx={{
+                                fontFamily: 'Ade display, sans-serif',
+                            }}
+                            > years of experience</Typography>
+                        </Typography>
+                        <h5>•</h5>
+
+                    </Box>
 
 
                 </motion.div>

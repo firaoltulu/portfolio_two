@@ -50,16 +50,16 @@ export default function LandingContact() {
                         <ContactForm />
                     </Grid>
 
-                    {/* <Grid item xs={12} md={6}>
-                        <Card sx={{ mb: 3 }}>
+                    <Grid item xs={12} md={6}>
+                        {/* <Card sx={{ mb: 3 }}>
                             <CardHeader title="Map Markers & Popups" />
                             <CardContent>
                                 <MapWrapperStyle>
                                     <ContactMap />
                                 </MapWrapperStyle>
                             </CardContent>
-                        </Card>
-                    </Grid> */}
+                        </Card> */}
+                    </Grid>
 
                 </Grid>
 

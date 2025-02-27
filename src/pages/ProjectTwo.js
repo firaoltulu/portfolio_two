@@ -21,6 +21,14 @@ import mongodbicon from "../assets/project/mongodbicon.png";
 import mysqlicon from "../assets/project/mysqlicon.png";
 import { PATH_PAGE } from 'src/routes/paths';
 
+import project_one from "../assets/project/project_two/dashboard/project_one.png";
+import project_two from "../assets/project/project_two/dashboard/project_two.png";
+import project_three from "../assets/project/project_two/dashboard/project_three.png";
+import project_four from "../assets/project/project_two/dashboard/project_four.png";
+import project_five from "../assets/project/project_two/dashboard/project_five.png";
+
+
+
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(Page)(({ theme }) => ({
@@ -40,31 +48,31 @@ const imagesLightbox_two = [
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/dashboard/project_one.png'
+        "Url": project_one
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/dashboard/project_two.png'
+        "Url": project_two
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/dashboard/project_three.png'
+        "Url": project_three
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/dashboard/project_four.png'
+        "Url": project_four
     },
     {
         "AddedDate": "2024-09-05T07:25:46.662Z",
         "ImageID": "67d0e080-2873-5950-9357-dc237275801c",
         "ModifiedDate": [],
-        "Url": '/static/project/dashboard/project_five.png'
+        "Url": project_five
     },
 ];
 

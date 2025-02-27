@@ -19,21 +19,14 @@ export default function MotionInView({ children, variants, transition, threshold
   const controls = useAnimation();
   const [ref, inView] = useInView({
     threshold: threshold || 0,
-    // triggerOnce: true
+    triggerOnce: true
   });
-
-  // const { scrollYProgress } = useScroll({
-  //   target: ref,
-  //   offset: ["start start", "end start"]
-  // })
-
-  // console.log(Object.keys(variants))
 
   useEffect(() => {
     if (inView) {
       controls.start(Object.keys(variants)[1]);
     } else {
-      controls.start(Object.keys(variants)[2]);
+      controls.start(Object.keys(variants)[0]);
     }
   }, [controls, inView, variants]);
 

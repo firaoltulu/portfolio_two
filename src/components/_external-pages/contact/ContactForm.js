@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { enqueueSnackbar } from 'notistack';
 // material
-import { TextField, Stack } from '@mui/material';
+import { TextField, Stack, Typography } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import { useTheme } from '@mui/material/styles';
 
 //
-import { varFadeInUp, MotionInView, TextAnimate, varFadeInLeft } from '../../animate';
+import { varFadeInUp, MotionInView, TextAnimate, varFadeInLeft, varFadeInRight } from '../../animate';
 import useIsMountedRef from 'src/hooks/useIsMountedRef';
 
 // ----------------------------------------------------------------------
@@ -17,6 +17,8 @@ import useIsMountedRef from 'src/hooks/useIsMountedRef';
 export default function ContactForm() {
   const theme = useTheme();
   const isMountedRef = useIsMountedRef();
+  const isRTL = theme.direction === 'rtl';
+
 
   const QuestionSchema = Yup.object().shape({
     Name: Yup.string().required('Name is required'),
@@ -88,29 +90,21 @@ export default function ContactForm() {
 
       </TextAnimate>
 
-      <TextAnimate
-        text="I’m available for new projects and collaborations.."
-        component={motion.h6}
-
-        sx={{
-          typography: 'h6',
-          'marginTop': '10px',
-          'marginBottom': '0px',
-          'fontFamily': 'Ade display, sans-serif',
-          'fontSize': '2.5em',
-          'fontWeight': 200,
-        }}
-      >
-
-      </TextAnimate>
+      <MotionInView variants={varFadeInUp}>
+        <Typography sx={{
+          color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec',
+        }}>
+          I’m available for new projects and collaborations..
+        </Typography>
+      </MotionInView>
 
       <FormikProvider value={formik}>
 
-        <Form autoComplete="off" noValidate onSubmit={handleSubmit} style={{ mt: 0 }}>
+        <Form autoComplete="off" noValidate onSubmit={handleSubmit} style={{}}>
 
           <Stack spacing={1}>
 
-            <MotionInView variants={varFadeInLeft}>
+            <MotionInView variants={isRTL ? varFadeInRight : varFadeInLeft}>
               <TextField
                 disabled={false}
                 fullWidth label="Name"
@@ -120,7 +114,7 @@ export default function ContactForm() {
               />
             </MotionInView>
 
-            <MotionInView variants={varFadeInLeft}>
+            <MotionInView variants={isRTL ? varFadeInRight : varFadeInLeft}>
               <TextField
                 disabled={false}
                 fullWidth label="Email"
@@ -129,7 +123,7 @@ export default function ContactForm() {
               />
             </MotionInView>
 
-            <MotionInView variants={varFadeInLeft}>
+            <MotionInView variants={isRTL ? varFadeInRight : varFadeInLeft}>
               <TextField
                 fullWidth label="Subject"
                 {...getFieldProps('Subject')}
@@ -138,26 +132,22 @@ export default function ContactForm() {
               />
             </MotionInView>
 
-            <MotionInView variants={varFadeInLeft}>
+            <MotionInView variants={isRTL ? varFadeInRight : varFadeInLeft}>
               <TextField
                 fullWidth label="Enter your message here."
                 multiline
                 rows={4}
                 {...getFieldProps('Message')}
                 error={Boolean(touched.Message && errors.Message)}
-                sx={{
-                  textColor: theme.palette.mode === 'light' ? '#fcf2ec' : '#371f0e',
-                }}
-
               />
             </MotionInView>
 
           </Stack>
 
-          <MotionInView variants={varFadeInLeft}>
+          <MotionInView variants={isRTL ? varFadeInRight : varFadeInLeft}>
             <LoadingButton size="large" type="submit" variant="contained" loading={isSubmitting}
               sx={{
-                mt: 3,
+                mt: 1,
                 color: theme.palette.mode === 'light' ? '#fcf2ec' : '#371f0e',
                 backgroundColor: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec'
 

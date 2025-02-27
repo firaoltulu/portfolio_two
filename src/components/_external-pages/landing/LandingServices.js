@@ -8,6 +8,7 @@ import { Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 //
 import { TextAnimate } from '../../animate';
+import { MHidden } from 'src/components/@material-extend';
 // Hooks
 import useNav from '../../../hooks/useNav';
 
@@ -93,8 +94,39 @@ export default function LandingService() {
 
                         </TextAnimate>
 
-                        <Box >I use a design-thinking methodology in my process
+                        <Box sx={{
+                            // 'marginTop': '20px',
+                            // 'marginBottom': '10px',
+                            'fontFamily': 'sans-serif',
+                            'fontSize': '1.2em',
+                            'fontWeight': 100,
+                            [theme.breakpoints.down('md')]: {
+                                'fontSize': '3.5em',
+
+                                'fontWeight': 300,
+
+                            }
+                        }}>I use a design-thinking methodology in my process
                             with great focus on users</Box>
+
+                        {/* <TextAnimate
+                            text="I use a design-thinking methodology in my process
+                            with great focus on users"
+                            component={motion.h6}
+
+                            sx={{
+                                typography: 'h6',
+                                'textTransform': 'uppercase',
+                                'marginTop': '20px',
+                                'marginBottom': '10px',
+                                'fontFamily': 'Ade display, sans-serif',
+                                'fontSize': '3.5em',
+                                'fontWeight': 400,
+                            }}
+                        >
+
+                        </TextAnimate> */}
+
 
                     </Box>
 
@@ -119,12 +151,14 @@ export default function LandingService() {
                             >
                                 <Box className="font_light process_num">02.</Box>
                                 <h3>Website Development</h3>
-                                <motion.img
-                                    src="https://cdn.prod.website-files.com/676ee13914d32411f64cb4bd/676ee13914d32411f64cb559_process_star.svg"
-                                    loading="lazy" alt="" className="process_star"
-                                    animate={{ rotate: 360 }}
-                                    transition={{ duration: 6, repeat: Infinity }}
-                                />
+                                <MHidden width='mdDown'>
+                                    <motion.img
+                                        src="https://cdn.prod.website-files.com/676ee13914d32411f64cb4bd/676ee13914d32411f64cb559_process_star.svg"
+                                        loading="lazy" alt="" className="process_star"
+                                        animate={{ rotate: 360 }}
+                                        transition={{ duration: 6, repeat: Infinity }}
+                                    />
+                                </MHidden>
                             </motion.div>
 
                             <motion.div
