@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/portfolio_two/static/js/main.872f4bfe.js",
-    "static/js/377.d3a21b3c.chunk.js": "/portfolio_two/static/js/377.d3a21b3c.chunk.js",
+    "main.js": "/portfolio_two/static/js/main.36594195.js",
+    "static/js/293.7e2edab2.chunk.js": "/portfolio_two/static/js/293.7e2edab2.chunk.js",
     "static/css/661.e2de9b9d.chunk.css": "/portfolio_two/static/css/661.e2de9b9d.chunk.css",
     "static/js/661.72aed3ef.chunk.js": "/portfolio_two/static/js/661.72aed3ef.chunk.js",
     "static/css/737.e2de9b9d.chunk.css": "/portfolio_two/static/css/737.e2de9b9d.chunk.css",
@@ -38,14 +38,15 @@
     "static/media/screen-blue.png": "/portfolio_two/static/media/screen-blue.95727665da034680f41f.png",
     "static/media/grid.png": "/portfolio_two/static/media/grid.cda028890a3f273fc58d.png",
     "static/media/screen_dark_2.png": "/portfolio_two/static/media/screen_dark_2.346ca5c9f09b23f12227.png",
+    "static/media/ethiopia.png": "/portfolio_two/static/media/ethiopia.939280584c37751451c1.png",
     "static/media/project_ten.png": "/portfolio_two/static/media/project_ten.e916b14abaf89195e3ee.png",
     "static/media/sidebar-blue.png": "/portfolio_two/static/media/sidebar-blue.e633a0e291147653cd4e.png",
     "service-worker.js": "/portfolio_two/service-worker.js",
     "static/media/block1-blue.png": "/portfolio_two/static/media/block1-blue.4170c859b88431ed2706.png",
     "static/media/block2-blue.png": "/portfolio_two/static/media/block2-blue.aa252293b04f80fc5f77.png",
     "index.html": "/portfolio_two/index.html",
-    "main.872f4bfe.js.map": "/portfolio_two/static/js/main.872f4bfe.js.map",
-    "377.d3a21b3c.chunk.js.map": "/portfolio_two/static/js/377.d3a21b3c.chunk.js.map",
+    "main.36594195.js.map": "/portfolio_two/static/js/main.36594195.js.map",
+    "293.7e2edab2.chunk.js.map": "/portfolio_two/static/js/293.7e2edab2.chunk.js.map",
     "661.e2de9b9d.chunk.css.map": "/portfolio_two/static/css/661.e2de9b9d.chunk.css.map",
     "661.72aed3ef.chunk.js.map": "/portfolio_two/static/js/661.72aed3ef.chunk.js.map",
     "737.e2de9b9d.chunk.css.map": "/portfolio_two/static/css/737.e2de9b9d.chunk.css.map",
@@ -62,6 +63,6 @@
     "166.3edd37a9.chunk.js.map": "/portfolio_two/static/js/166.3edd37a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.872f4bfe.js"
+    "static/js/main.36594195.js"
   ]
 }
