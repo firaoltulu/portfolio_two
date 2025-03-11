@@ -10,7 +10,8 @@ import {
   LandingProjects,
   LandingTestimonials,
   LandingContact,
-  LandingFooter
+  LandingFooter,
+  LandingLicenses
 } from '../components/_external-pages/landing';
 import "../components/_external-pages/landing/styles.css";
 
@@ -236,6 +237,7 @@ export default function LandingPage() {
           <LandingService />
           <LandingProjects />
           <LandingTestimonials />
+          {/* <LandingLicenses /> */}
           <LandingContact />
           <LandingFooter />
 

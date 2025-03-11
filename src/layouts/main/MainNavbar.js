@@ -19,14 +19,6 @@ const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 34;
 
 const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
-  // height: APP_BAR_MOBILE,
-  // transition: theme.transitions.create(['height', 'background-color'], {
-  //   easing: theme.transitions.easing.easeInOut,
-  //   duration: theme.transitions.duration.shorter
-  // }),
-  // [theme.breakpoints.up('md')]: {
-  //   height: APP_BAR_DESKTOP
-  // },
   width: { xl: APP_BAR_DESKTOP, lg: APP_BAR_DESKTOP, md: "100%", sm: "100%" },
   height: { xl: "100%", lg: "100%", md: "100%", sm: APP_BAR_MOBILE },
 }));
@@ -46,7 +38,7 @@ export default function MainNavbar() {
       }
 
     }
-  }, [active])
+  }, [active]);
 
   return (
     <AppBar

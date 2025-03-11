@@ -15,6 +15,7 @@ import useNav from '../../../hooks/useNav';
 // 
 import hero_one from "../../../assets/hero/hero_one.png";
 import hero_two from "../../../assets/hero/hero_two.png";
+import ethiopia from "../../../assets/hero/ethiopia.png";
 
 // ----------------------------------------------------------------------
 
@@ -460,7 +461,7 @@ export default function LandingHero({ bodyRef }) {
           <Box className="hero_images">
             <Box ref={distortionRef} className="distortion"
               sx={{
-                border: '2px dashed #371f0e',
+                border: '2px dotted #371f0e',
                 borderColor: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec',
                 backgroundImage:
                   theme.palette.mode === 'light'
@@ -468,13 +469,13 @@ export default function LandingHero({ bodyRef }) {
                     : `linear-gradient(45deg, rgba(96, 108, 179, 0.2), rgba(37, 57, 112, 0.1))`,
               }}
             ></Box>
-            <motion.img
-              src="https://cdn.prod.website-files.com/676ee13914d32411f64cb4bd/676ee13914d32411f64cb53a_Big%20star.svg"
+            {/* <motion.img
+              src={ethiopia}
               loading="lazy" alt="" className="hero_big_star"
               animate={{ rotate: 360 }}
-              transition={{ duration: 6, repeat: Infinity }} />
+              transition={{ duration: 6, repeat: Infinity }} /> */}
             <motion.img
-              src="https://cdn.prod.website-files.com/676ee13914d32411f64cb4bd/676ee13914d32411f64cb53b_Star.svg"
+              src={ethiopia}
               loading="lazy" alt="" className="hero_star"
               animate={{ rotate: 360 }}
               transition={{ duration: 6, repeat: Infinity }} />
@@ -653,8 +654,10 @@ export default function LandingHero({ bodyRef }) {
             <a href="https://flowcv.com/resume/0d0uu5mt3k" target="_blank"
               className="senad_a_request_two w-inline-block">
               <Box className="font_light" sx={{
-                color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec'
-              }}>Download CV</Box>
+                color: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec',
+                borderBottom: '1px dotted #371f0e',
+                borderBottomColor: theme.palette.mode === 'light' ? '#371f0e' : '#fcf2ec',
+              }}>Download Cv</Box>
             </a>
 
           </Box>
